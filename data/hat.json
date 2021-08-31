@@ -1,0 +1,22 @@
+{
+    "trapper": {
+        "url": "./hats/trapper.png",
+        "weight": 0,
+        "supply": 0 
+    },
+    "scuba": {
+        "url": "./hats/scuba.png",
+        "weight": 0,
+        "supply": 0 
+    },
+    "cowboy": {
+        "url": "./hats/cowboy.png",
+        "weight": 0,
+        "supply": 0 
+    },
+    "astronaut": {
+        "url": "./hats/astronaut.png",
+        "weight": 0,
+        "supply": 0 
+    }
+}
