@@ -39,10 +39,18 @@ def getSupply(weights):
         supply[i] += 1
     return supply
 
-# for i in range(len(list(hats.keys()))):
-#    hat = list(hats.keys())[i]
-#    panda = Image.open("panda2.png")
-#    hat = Image.open(hats[hat]["url"])
+def generateImages():
+    BASE = "panda2.png"
+    # load all trait data
+    # generate supplies
+    # paste routine
+    for trait in Trait:
+        data = loadData(trait)
 
-#    panda.paste(hat, (0, 0), hat)
-#    panda.save("./output/test{0}.jpg".format(i))
+        for i in range(len(list(data.keys()))):
+            attr = list(data.keys())[i]
+            panda = Image.open(BASE)
+            attr_img = Image.open(data[attr]["url"])
+
+            panda.paste(attr_img, (0, 0), attr_img)
+            panda.save("./output/test_panda{0}.jpg".format(i))
