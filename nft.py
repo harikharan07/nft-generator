@@ -28,16 +28,41 @@ def loadData():
             obj[trait.name.lower()] = json.loads(data.read())
     return obj
 
-def getSupply(weights):
+def getSupply(weights, max):
+    if max == None:
+        max = TOTAL_ITEMS
     total = sum(weights)
     supply = []
     for w in weights:
-        supply += [int((w / total) * TOTAL_ITEMS)]
+        supply += [int((w / total) * max)]
     # If supplies do not total properly, add 1 randomly
     if sum(supply) != TOTAL_ITEMS:
         i = random.randint(0, len(supply) - 1)
-        supply[i] += 1
+        supply[i] += 10000 - sum(supply)
     return supply
+
+def getRarity(min, max, totalItems, curveType, stp):
+    if curveType == "exp":
+        # Solve for exponential function
+        a = min
+        b = max/min
+        func = lambda x : min * (b**(stp * x))
+        return [func(x / totalItems) for x in range(1, totalItems + 1)]
+    elif curveType == "linear":
+        m = max - min
+        b = min
+        return [(m * (x / totalItems)) + b for x in range(1, totalItems + 1)]
+    else:
+        return None
+
+weights = getRarity(0.65, 33, 23, "exp", 1)
+# supply = getSupply(getRarity(0.65, 33, 23, "linear", 1))
+# weights = [33, 4.7, 4.5, 4.3, 4.1, 3.9, 3.7, 3.5, 3.3, 3.1, 2.9, 2.7, 2.5, 2.3, 2.1, 2.0, 1.8, 1.6, 1.4, 1.2, 1, 0.8, 0.6]
+supply = getSupply(weights, 6666)
+# print(sum(supply))
+
+for _ in supply:
+    print(_)
 
 # for i in range(len(list(hats.keys()))):
 #    hat = list(hats.keys())[i]
