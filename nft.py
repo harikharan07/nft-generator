@@ -16,9 +16,10 @@ class Trait(Enum):
     BACKGROUND = 0
     FUR = 1
     EYES = 2
-    FACE = 3
-    HAT = 4
+    FACE = 4
     CLOTHES = 5
+    ACCESSORIES = 3
+    HAT = 6
     
 #  i = random.randint(0, len(list(hats.keys())) - 1)
 
@@ -72,6 +73,12 @@ def generateJSON():
                 output = {}
                 path = "./" + trait.name.lower()
                 items = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
+                output["none"] = {
+                    "url": "./misc/none.png",
+                    "trait_type": trait.name.lower(),
+                    "weight": 0,
+                    "supply": 0
+                }
                 for item in items:
                     output[item[:item.index(".png")]] = {
                         "url": "./" + trait.name.lower() + "/" + item,
@@ -106,5 +113,8 @@ def generateImages():
                 panda.paste(attr_img, (0, 0), attr_img)
         panda = panda.convert("RGB")
         panda.save("./output/test_panda{0}.jpg".format(_))
+
+def setWeights():
+    pass
 
 generateImages()
