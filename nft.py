@@ -16,54 +16,37 @@ class Trait(Enum):
     BACKGROUND = 0
     FUR = 1
     EYES = 2
-    FACE = 4
-    CLOTHES = 5
-    ACCESSORIES = 3
+    CLOTHES = 3
+    ACCESSORIES = 4
+    FACE = 5
     HAT = 6
-    
-#  i = random.randint(0, len(list(hats.keys())) - 1)
+
+TRAIT_SUPPLY = {
+    "background": {
+        "total": 9995
+    },
+    "clothes": {
+        "total": 9995
+    },
+    "eyes": {
+        "total": 9995
+    },
+    "face": {
+        "total": 9995
+    },
+    "fur": {
+        "total": 9995
+    },
+    "hat": {
+        "total": 9995
+    }
+}
 
 def loadData(trait):
     obj = {}
     with open("./data/{0}.json".format(trait.name.lower())) as data:
         obj = json.loads(data.read())
     return obj
-
-def getSupply(weights, max):
-    if max == None:
-        max = TOTAL_ITEMS
-    total = sum(weights)
-    supply = []
-    for w in weights:
-        supply += [int((w / total) * max)]
-    # If supplies do not total properly, add 1 randomly
-    if sum(supply) != TOTAL_ITEMS:
-        i = random.randint(0, len(supply) - 1)
-        supply[i] += 10000 - sum(supply)
-    return supply
-
-def getRarity(min, max, totalItems, curveType, stp):
-    if curveType == "exp":
-        # Solve for exponential function
-        a = min
-        b = max/min
-        func = lambda x : min * (b**(stp * x))
-        return [func(x / totalItems) for x in range(1, totalItems + 1)]
-    elif curveType == "linear":
-        m = max - min
-        b = min
-        return [(m * (x / totalItems)) + b for x in range(1, totalItems + 1)]
-    else:
-        return None
-
-# weights = getRarity(0.65, 33, 23, "exp", 1)
-# supply = getSupply(getRarity(0.65, 33, 23, "linear", 1))
-# weights = [33, 4.7, 4.5, 4.3, 4.1, 3.9, 3.7, 3.5, 3.3, 3.1, 2.9, 2.7, 2.5, 2.3, 2.1, 2.0, 1.8, 1.6, 1.4, 1.2, 1, 0.8, 0.6]
-# supply = getSupply(weights, 6666)
-# print(sum(supply))
-
-# for _ in supply:
-#     print(_)
 
 def generateJSON():
     dirs = [name for name in os.listdir(".") if os.path.isdir(name)]
@@ -73,48 +56,80 @@ def generateJSON():
                 output = {}
                 path = "./" + trait.name.lower()
                 items = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
-                output["none"] = {
-                    "url": "./misc/none.png",
-                    "trait_type": trait.name.lower(),
-                    "weight": 0,
-                    "supply": 0
-                }
+                delimiters = ["background", "face", "fur", "eyes"]
+                if not trait.name.lower() in delimiters:
+                    print(trait.name.lower())
+                    output["none"] = {
+                        "url": "./misc/none.png",
+                        "trait_type": trait.name.lower(),
+                        "supply": 0,
+                        "layer": trait.value
+                    }
                 for item in items:
+                    # Layer exception for wings
+                    layer = trait.value
+                    if "wings" in item:
+                        layer = trait.value - 1
                     output[item[:item.index(".png")]] = {
                         "url": "./" + trait.name.lower() + "/" + item,
-                        "weight": 0,
-                        "supply": 0
+                        "trait_type": trait.name.lower(),
+                        "supply": 0,
+                        "layer": layer 
                     }
                 file.write(json.dumps(output))
 
+def getMetadata(index, attributes):
+    output = {
+        "attributes": [],
+        "description": "",
+        "external_url": "https://happypandas.io",
+        "image": "/ipfs/",
+        "name": str(index)
+    }
+    for attr in attributes:
+        output["attributes"] += [{
+            "trait_type": attr["trait_type"],
+            "value": attr["value"]
+        }]
+    return output
+
 def generateImages():
     generateJSON()
-    # load all trait data
-    # generate supplies
-    # paste routine
-    dirs = [name for name in os.listdir(".") if os.path.isdir(name)]
     for _ in range(100):
+        layers = []
         panda = Image.new(mode="RGBA", size=(2700, 2700), color=(255, 255, 255))
+        # Generate list of attributes
         for trait in Trait:
+            # Get trait JSON
             data = loadData(trait)
-            if trait.name.lower() in dirs:
-                # random attribute
-                i = random.randint(0, len(list(data.keys())) - 1)
-
-                keys = list(data.keys())
-                attr = keys[i]
-
-                # for i in range(len(keys)):
-                #     if "scuba" in keys[i].lower():
-                #         attr = keys[i]
-
-                attr_img = Image.open(data[attr]["url"]).convert("RGBA")
-
-                panda.paste(attr_img, (0, 0), attr_img)
+            # Random number 
+            i = random.randint(0, len(list(data.keys())) - 1)
+            # Random attribute
+            attr = list(data.keys())[i]
+            layers.append(data[attr])
+        # Sort list ascending
+        layers.sort(key=lambda x:x["layer"])
+        # Iterate and swap if wings
+        for i in range(len(layers)):
+            if "wings" in layers[i]["url"]:
+                layers[i-1]["layer"] += 1
+        # Sort again
+        layers.sort(key=lambda x:x["layer"])
+        print(_, layers)
+        # Create image
+        for layer in layers:
+            attr_img = Image.open(layer["url"]).convert("RGBA")
+            panda.paste(attr_img, (0, 0), attr_img)
         panda = panda.convert("RGB")
         panda.save("./output/test_panda{0}.jpg".format(_))
 
-def setWeights():
+def getSupply(trait, supply):
+    data = loadData(trait)
+    for item in data:
+        data[item]['supply'] 
+    print(data)
     pass
 
 generateImages()
+# getSupply(Trait.EYES)
+# generateJSON()
