@@ -10,7 +10,7 @@ import random
     function to generate metadata for all 10000 images
 """
 
-TOTAL_ITEMS = 9900
+TOTAL_ITEMS = 9995
 
 class Trait(Enum):
     BACKGROUND = 0
@@ -75,10 +75,38 @@ def getMetadata(index, attributes):
 
 def generateImages(amount):
     global TRAIT_SUPPLY
+
+    # Hashes of pandas
+    hashes = []
+
+    # Check supplies to ensure totals match
+    for trait in TRAIT_SUPPLY:
+        sum = 0
+        for item in TRAIT_SUPPLY[trait]:
+            if item != "total":
+                sum += TRAIT_SUPPLY[trait][item]
+        if sum != TOTAL_ITEMS:
+            raise Exception("Supplies do not match totals")
+
     generateJSON()
     for _ in range(amount):
         layers = []
         panda = Image.new(mode="RGBA", size=(2700, 2700), color=(255, 255, 255))
+        # Get possibilities
+        # possibilities = 1
+        # counts = []
+        # for trait in Trait:
+        #     total = 0
+        #     for item in TRAIT_SUPPLY[trait.name.lower()]:
+        #         if TRAIT_SUPPLY[trait.name.lower()][item] > 0:
+        #             total += 1
+        #     # Remove 'total' count
+        #     total -= 1
+        #     counts += [total]
+        # for c in counts:
+        #     possibilities = possibilities * c
+        # print((_+1 / TOTAL_ITEMS) * 100)
+        # print(possibilities)
         # Attributes list for metadata
         attributes = []
         # Generate list of attributes
@@ -87,11 +115,16 @@ def generateImages(amount):
             data = loadData(trait)
             # Create container for attribute
             attr = None
+            # List of attributes with > 0 supply
+            available = []
+            for item in data:
+                if TRAIT_SUPPLY[trait.name.lower()][item] > 0:
+                    available.append(item)
             while(attr == None):
                 # Random number 
-                i = random.randint(0, len(list(data.keys())) - 1)
+                i = random.randint(0, len(available) - 1)
                 # Random attribute
-                temp = list(data.keys())[i]
+                temp = available[i]
                 # If there is supply assign attr
                 if TRAIT_SUPPLY[trait.name.lower()][temp] > 0:
                     attr = temp
@@ -104,9 +137,10 @@ def generateImages(amount):
                 "value": attr
             }]
             layers.append(data[attr])
+        print(TRAIT_SUPPLY)
         # Pull metadata from layers
         metadata = getMetadata(_, attributes)
-        f = open("./output/metadata/data.json", "w+")
+        f = open("./output/metadata/{0}.json".format(_), "w+")
         f.write(json.dumps(metadata))
         f.close()
         # Sort list ascending
@@ -119,18 +153,22 @@ def generateImages(amount):
                 print(layers[i-1])
         # Sort again
         layers.sort(key=lambda x:x["layer"])
+        # Hash pandas
+        # Separate trait names into new list and hash the list of strings
+        # bc dict is not hashable
+        # hashes += [hash(tuple(layers))]
         # Create image
         for layer in layers:
             attr_img = Image.open(layer["url"]).convert("RGBA")
-            panda.paste(attr_img, (0, 0), attr_img)
-        panda = panda.convert("RGB")
-        panda.save("./output/test_panda{0}.jpg".format(_))
+            # panda.paste(attr_img, (0, 0), attr_img)
+        # panda = panda.convert("RGB")
+        # panda.save("./output/test_panda{0}.jpg".format(_))
+    print(hashes)
 
 def getSupply(trait, supply):
     data = loadData(trait)
     for item in data:
         data[item]['supply'] 
-    print(data)
     pass
 
 generateImages(9995)
