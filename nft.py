@@ -73,73 +73,58 @@ def getMetadata(index, attributes):
         }]
     return output
 
+def getAttributes(hashes):
+    global TRAIT_SUPPLY
+    while True:
+        def select(values):
+            variate = random.random() * sum(values.values())
+            cumulative = 0.0
+            for item, weight in values.items():
+                cumulative += weight
+                if variate < cumulative:
+                    return item
+            return item # Shouldn't get here, but just in case of rounding...
+
+        attributes = []
+        for trait in Trait:
+            attr = select(TRAIT_SUPPLY[trait.name.lower()])
+            attributes += [attr]
+        if not hash(tuple(attributes)) in hashes:
+            break
+    return attributes
+
 def generateImages(amount):
     global TRAIT_SUPPLY
-
     # Hashes of pandas
-    hashes = []
-
+    hashes = {}
     # Check supplies to ensure totals match
     for trait in TRAIT_SUPPLY:
-        sum = 0
+        s = 0
         for item in TRAIT_SUPPLY[trait]:
             if item != "total":
-                sum += TRAIT_SUPPLY[trait][item]
-        if sum != TOTAL_ITEMS:
+                s += TRAIT_SUPPLY[trait][item]
+        if s != TOTAL_ITEMS:
             raise Exception("Supplies do not match totals")
 
     generateJSON()
     for _ in range(amount):
         layers = []
         panda = Image.new(mode="RGBA", size=(2700, 2700), color=(255, 255, 255))
-        # Get possibilities
-        # possibilities = 1
-        # counts = []
-        # for trait in Trait:
-        #     total = 0
-        #     for item in TRAIT_SUPPLY[trait.name.lower()]:
-        #         if TRAIT_SUPPLY[trait.name.lower()][item] > 0:
-        #             total += 1
-        #     # Remove 'total' count
-        #     total -= 1
-        #     counts += [total]
-        # for c in counts:
-        #     possibilities = possibilities * c
-        # print((_+1 / TOTAL_ITEMS) * 100)
-        # print(possibilities)
         # Attributes list for metadata
-        attributes = []
-        # Generate list of attributes
-        for trait in Trait:
-            # Get trait JSON
+        attributes = getAttributes(hashes)
+        # Attribute metadata output
+        output = []
+        for i in range(len(attributes)):
+            trait = Trait(i)
             data = loadData(trait)
-            # Create container for attribute
-            attr = None
-            # List of attributes with > 0 supply
-            available = []
-            for item in data:
-                if TRAIT_SUPPLY[trait.name.lower()][item] > 0:
-                    available.append(item)
-            while(attr == None):
-                # Random number 
-                i = random.randint(0, len(available) - 1)
-                # Random attribute
-                temp = available[i]
-                # If there is supply assign attr
-                if TRAIT_SUPPLY[trait.name.lower()][temp] > 0:
-                    attr = temp
-            # Decrement supply
-            TRAIT_SUPPLY[trait.name.lower()]["total"] -= 1
-            TRAIT_SUPPLY[trait.name.lower()][attr] -= 1
             # Add attributes to metadata list
-            attributes += [{
+            output += [{
                 "trait_type": trait.name.lower(),
-                "value": attr
+                "value": attributes[i]
             }]
-            layers.append(data[attr])
-        print(TRAIT_SUPPLY)
+            layers.append(data[attributes[i]])
         # Pull metadata from layers
-        metadata = getMetadata(_, attributes)
+        metadata = getMetadata(_, output)
         f = open("./output/metadata/{0}.json".format(_), "w+")
         f.write(json.dumps(metadata))
         f.close()
@@ -150,25 +135,27 @@ def generateImages(amount):
             # If wings, swap layers
             if "wings" in layers[i]["url"].lower():
                 layers[i-1]["layer"] += 1
-                print(layers[i-1])
         # Sort again
         layers.sort(key=lambda x:x["layer"])
         # Hash pandas
-        # Separate trait names into new list and hash the list of strings
-        # bc dict is not hashable
-        # hashes += [hash(tuple(layers))]
+        pandaHash = hash(tuple(map(lambda x:x["url"][2:].replace('.png','')[x["url"][2:].index('/')+1:], layers)))
+        if pandaHash in hashes:
+            print(_)
+            print(layers)
+            hashes[pandaHash] += 1
+        else:
+            hashes[pandaHash] = 0
         # Create image
         for layer in layers:
             attr_img = Image.open(layer["url"]).convert("RGBA")
-            # panda.paste(attr_img, (0, 0), attr_img)
-        # panda = panda.convert("RGB")
-        # panda.save("./output/test_panda{0}.jpg".format(_))
-    print(hashes)
-
-def getSupply(trait, supply):
-    data = loadData(trait)
-    for item in data:
-        data[item]['supply'] 
-    pass
+            panda.paste(attr_img, (0, 0), attr_img)
+        panda = panda.convert("RGB")
+        panda.save("./output/test_panda{0}.jpg".format(_))
+        print("Progress:", (_ / 9995) * 100)
+    same = 0
+    for h in hashes:
+        if hashes[h] > 0:
+            same += 1
+    print("Identical Pandas", same)
 
 generateImages(9995)
