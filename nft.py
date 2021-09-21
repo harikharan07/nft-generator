@@ -25,6 +25,27 @@ class Trait(Enum):
 f = open("./data/supply.json", "r")
 TRAIT_SUPPLY = json.loads(f.read())
 
+# Get rarity stats for generated set
+def getStatistics():
+    # Store appearances of traits
+    traitDict = {}
+    # Path to metadata
+    path = "./output/metadata/"
+    items = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
+    for i in range(len(items)):
+        index = int(items[i][:items[i].index(".json")])
+        with open(path + items[i]) as file:
+            data = json.loads(file.read())
+            for trait in data["attributes"]:
+                if trait["trait_type"] in traitDict:
+                    if trait["value"] in traitDict[trait["trait_type"]]:
+                        traitDict[trait["trait_type"]][trait["value"]] += 1
+                    else:
+                        traitDict[trait["trait_type"]][trait["value"]] = 1
+                else:
+                    traitDict[trait["trait_type"]] = {}
+    return traitDict
+
 def loadData(trait):
     obj = {}
     with open("./data/{0}.json".format(trait.name.lower())) as data:
@@ -93,6 +114,23 @@ def getAttributes(hashes):
             break
     return attributes
 
+def getRandomAttributes(hashes):
+    global TRAIT_SUPPLY
+    while True:
+        def select(trait):
+            keys = list(TRAIT_SUPPLY[trait])
+            i = random.randint(0, len(keys) - 1)
+            return keys[i]
+
+        attributes = []
+        for trait in Trait:
+            attr = select(trait.name.lower())
+            attributes += [attr]
+
+        if not hash(tuple(attributes)) in hashes:
+            break
+    return attributes
+
 def generateImages(amount):
     global TRAIT_SUPPLY
     # Hashes of pandas
@@ -107,11 +145,11 @@ def generateImages(amount):
             raise Exception("Supplies do not match totals")
 
     generateJSON()
-    for _ in range(amount):
+    for _ in range(0, amount):
         layers = []
         panda = Image.new(mode="RGBA", size=(2700, 2700), color=(255, 255, 255))
         # Attributes list for metadata
-        attributes = getAttributes(hashes)
+        attributes = getRandomAttributes(hashes)
         # Attribute metadata output
         output = []
         for i in range(len(attributes)):
@@ -158,4 +196,5 @@ def generateImages(amount):
             same += 1
     print("Identical Pandas", same)
 
-generateImages(9995)
+# generateImages(9995)
+getStatistics()
