@@ -1,1 +1,122 @@
-{"eye10_NORMAL": {"url": "./eyes/eye10_NORMAL.png", "trait_type": "eyes", "supply": 0, "layer": 2}, "eye11_LIGHTNING": {"url": "./eyes/eye11_LIGHTNING.png", "trait_type": "eyes", "supply": 0, "layer": 2}, "eye1_CLOSED": {"url": "./eyes/eye1_CLOSED.png", "trait_type": "eyes", "supply": 0, "layer": 2}, "eye2_HIGH": {"url": "./eyes/eye2_HIGH.png", "trait_type": "eyes", "supply": 0, "layer": 2}, "eye3_ANIME": {"url": "./eyes/eye3_ANIME.png", "trait_type": "eyes", "supply": 0, "layer": 2}, "eye4_BITCOIN": {"url": "./eyes/eye4_BITCOIN.png", "trait_type": "eyes", "supply": 0, "layer": 2}, "eye4_ETH": {"url": "./eyes/eye4_ETH.png", "trait_type": "eyes", "supply": 0, "layer": 2}, "eye4_WETH2": {"url": "./eyes/eye4_WETH2.png", "trait_type": "eyes", "supply": 0, "layer": 2}, "eye5_FLAMES": {"url": "./eyes/eye5_FLAMES.png", "trait_type": "eyes", "supply": 0, "layer": 2}, "eye6_DOLLARSIGN": {"url": "./eyes/eye6_DOLLARSIGN.png", "trait_type": "eyes", "supply": 0, "layer": 2}, "eye7_TIRED": {"url": "./eyes/eye7_TIRED.png", "trait_type": "eyes", "supply": 0, "layer": 2}, "eye8_GOOGLY": {"url": "./eyes/eye8_GOOGLY.png", "trait_type": "eyes", "supply": 0, "layer": 2}, "eye9_WIDE": {"url": "./eyes/eye9_WIDE.png", "trait_type": "eyes", "supply": 0, "layer": 2}}
+{
+    "3D Glasses": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/3D Glasses.png"
+    },
+    "Aderral": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Aderral.png"
+    },
+    "Aviators": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Aviators.png"
+    },
+    "BTC": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/BTC.png"
+    },
+    "Black Eye": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Black Eye.png"
+    },
+    "Crying": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Crying.png"
+    },
+    "Cyborg": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Cyborg.png"
+    },
+    "Designer Shades": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Designer Shades.png"
+    },
+    "ETH": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/ETH.png"
+    },
+    "Euro": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Euro.png"
+    },
+    "Eyepatch": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Eyepatch.png"
+    },
+    "Giant": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Giant.png"
+    },
+    "Glasses": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Glasses.png"
+    },
+    "Hypno Eyes": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Hypno Eyes.png"
+    },
+    "Money": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Money.png"
+    },
+    "Nightvision Goggles": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Nightvision Goggles.png"
+    },
+    "Normal": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Normal.png"
+    },
+    "Reading Glasses": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Reading Glasses.png"
+    },
+    "Red Albino Eyes": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Red Albino Eyes.png"
+    },
+    "SOL": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/SOL.png"
+    },
+    "Stoned": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Stoned.png"
+    },
+    "Sunglasses": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Sunglasses.png"
+    },
+    "Swim Goggles": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/Swim Goggles.png"
+    },
+    "X-Techno Glasses": {
+        "layer": 5,
+        "trait_type": "eyes",
+        "url": "./eyes/X-Techno Glasses.png"
+    }
+}

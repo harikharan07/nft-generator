@@ -4,26 +4,31 @@ import json
 from enum import Enum
 import numpy as np
 import random
+from pprint import pprint
 
-"""
-    draw from pool of 10000 attributes from each trait
-    function to generate metadata for all 10000 images
-"""
-
-TOTAL_ITEMS = 9995
+TOTAL_ITEMS = 8888
 
 class Trait(Enum):
     BACKGROUND = 0
-    FUR = 1
-    EYES = 2
+    BODY = 1
+    HEAD = 2
     CLOTHES = 3
-    ACCESSORIES = 4
-    FACE = 5
-    HEAD = 6
+    MOUTH = 4
+    EYES = 5
+    HAT = 6
 
 # Load trait data
 f = open("./data/supply.json", "r")
 TRAIT_SUPPLY = json.loads(f.read())
+
+def getTraitsFromJSON(index):
+    with open("./output/metadata/{0}.json".format(index)) as file:
+        data = json.loads(file.read())
+        attr = data["attributes"]
+        traits = []
+        for _ in attr:
+            traits += [_["value"]]
+        return traits
 
 # Get rarity stats for generated set
 def getStatistics():
@@ -33,7 +38,6 @@ def getStatistics():
     path = "./output/metadata/"
     items = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
     for i in range(len(items)):
-        index = int(items[i][:items[i].index(".json")])
         with open(path + items[i]) as file:
             data = json.loads(file.read())
             for trait in data["attributes"]:
@@ -44,7 +48,8 @@ def getStatistics():
                         traitDict[trait["trait_type"]][trait["value"]] = 1
                 else:
                     traitDict[trait["trait_type"]] = {}
-    return traitDict
+    with open ("./stats.json", "w+") as file:
+        file.write(json.dumps(traitDict, indent=4, sort_keys=True))
 
 def loadData(trait):
     obj = {}
@@ -62,8 +67,8 @@ def generateJSON():
                 items = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
                 delimiters = ["background", "face", "fur", "eyes"]
                 if not trait.name.lower() in delimiters:
-                    output["none"] = {
-                        "url": "./misc/none.png",
+                    output["None"] = {
+                        "url": "./misc/None.png",
                         "trait_type": trait.name.lower(),
                         "layer": trait.value
                     }
@@ -77,15 +82,33 @@ def generateJSON():
                         "trait_type": trait.name.lower(),
                         "layer": layer 
                     }
-                file.write(json.dumps(output))
+                file.write(json.dumps(output, indent=4, sort_keys=True))
 
 def getMetadata(index, attributes):
     output = {
         "attributes": [],
-        "description": "",
-        "external_url": "https://happypandas.io",
+        "description": "The frogs are having a party!",
+        "symbol": "FROG",
+        "external_url": "frog-party.io",
         "image": "/ipfs/",
-        "name": str(index)
+        "name": str(index),
+        "collection": {
+            "name": "Frog Party"
+        },
+        "properties": {
+            "files": [
+                {
+                    "uri": "/ipfs/",
+                    "type": "image/png"
+                }
+            ],
+            "creators": [
+                {
+                    "address": "CMetYfSiXPBWB8pXGYyJK3ThFpk2pvNxixJTE4aEXCq3",
+                    "share": 100
+                }
+            ]
+        }
     }
     for attr in attributes:
         output["attributes"] += [{
@@ -112,6 +135,7 @@ def getAttributes(hashes):
             attributes += [attr]
         if not hash(tuple(attributes)) in hashes:
             break
+    print(attributes)
     return attributes
 
 def getRandomAttributes(hashes):
@@ -131,30 +155,41 @@ def getRandomAttributes(hashes):
             break
     return attributes
 
-def generateImages(amount):
+def generateImages(amount, fromData):
     global TRAIT_SUPPLY
     # Hashes of pandas
     hashes = {}
     # Check supplies to ensure totals match
-    for trait in TRAIT_SUPPLY:
-        s = 0
-        for item in TRAIT_SUPPLY[trait]:
-            if item != "total":
-                s += TRAIT_SUPPLY[trait][item]
-        if s != TOTAL_ITEMS:
-            raise Exception("Supplies do not match totals")
+    # for trait in TRAIT_SUPPLY:
+    #     s = 0
+    #     for item in TRAIT_SUPPLY[trait]:
+    #         if item != "total":
+    #             s += TRAIT_SUPPLY[trait][item]
+        # if s != TOTAL_ITEMS:
+        #     print(trait)
+        #     raise Exception("Supplies do not match totals")
 
     generateJSON()
     for _ in range(0, amount):
         layers = []
-        panda = Image.new(mode="RGBA", size=(2700, 2700), color=(255, 255, 255))
+        panda = Image.new(mode="RGBA", size=(512, 512), color=(255, 255, 255))
         # Attributes list for metadata
-        attributes = getRandomAttributes(hashes)
+        if fromData:
+            attributes = getTraitsFromJSON(_)
+        else:
+            if _ % 10 == 0:
+                attributes = getRandomAttributes(hashes)
+            else:
+                attributes = getAttributes(hashes)
+
+        # attributes = getAttributes(hashes)
+        # attributes = getRandomAttributes(hashes)
         # Attribute metadata output
         output = []
         for i in range(len(attributes)):
             trait = Trait(i)
             data = loadData(trait)
+            # print(data)
             # Add attributes to metadata list
             output += [{
                 "trait_type": trait.name.lower(),
@@ -168,13 +203,6 @@ def generateImages(amount):
         f.close()
         # Sort list ascending
         layers.sort(key=lambda x:x["layer"])
-        # Iterate and swap if wings
-        for i in range(len(layers)):
-            # If wings, swap layers
-            if "wings" in layers[i]["url"].lower():
-                layers[i-1]["layer"] += 1
-        # Sort again
-        layers.sort(key=lambda x:x["layer"])
         # Hash pandas
         pandaHash = hash(tuple(map(lambda x:x["url"][2:].replace('.png','')[x["url"][2:].index('/')+1:], layers)))
         if pandaHash in hashes:
@@ -187,14 +215,15 @@ def generateImages(amount):
         for layer in layers:
             attr_img = Image.open(layer["url"]).convert("RGBA")
             panda.paste(attr_img, (0, 0), attr_img)
-        panda = panda.convert("RGB")
-        panda.save("./output/test_panda{0}.jpg".format(_))
-        print("Progress:", (_ / 9995) * 100)
+        # panda = panda.convert("RGB")
+        panda.save("./output/{0}.png".format(_))
+        print("Progress:", (_ / 9000) * 100)
     same = 0
-    for h in hashes:
-        if hashes[h] > 0:
+    for i in range(len(list(hashes.keys()))):
+        if hashes[list(hashes.keys())[i]] > 0:
+            print(i)
             same += 1
-    print("Identical Pandas", same)
+    print("Identical Frogs", same)
 
-# generateImages(9995)
-getStatistics()
+generateImages(8888, fromData=False)
+# pprint(getStatistics())

@@ -1,0 +1,97 @@
+{
+    "Black Durag": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Black Durag.png"
+    },
+    "Blue Snapback": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Blue Snapback.png"
+    },
+    "Cowboy": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Cowboy.png"
+    },
+    "Crown": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Crown.png"
+    },
+    "Diamond Crown": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Diamond Crown.png"
+    },
+    "Durag White": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Durag White.png"
+    },
+    "Fez": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Fez.png"
+    },
+    "Frog": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Frog.png"
+    },
+    "Green Snapback": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Green Snapback.png"
+    },
+    "Hair Curl": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Hair Curl.png"
+    },
+    "Halo": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Halo.png"
+    },
+    "High Hat": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/High Hat.png"
+    },
+    "Mohawk": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Mohawk.png"
+    },
+    "Mohawk Purple": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Mohawk Purple.png"
+    },
+    "None": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./misc/None.png"
+    },
+    "Red Snapback": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Red Snapback.png"
+    },
+    "Santa Hat": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Santa Hat.png"
+    },
+    "Toad": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/Toad.png"
+    },
+    "White Cowboy": {
+        "layer": 6,
+        "trait_type": "hat",
+        "url": "./hat/White Cowboy.png"
+    }
+}

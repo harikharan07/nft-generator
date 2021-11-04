@@ -1,1 +1,87 @@
-{"bc1_BLUE": {"url": "./background/bc1_BLUE.png", "trait_type": "background", "supply": 0, "layer": 0}, "bc1_GRAY": {"url": "./background/bc1_GRAY.png", "trait_type": "background", "supply": 0, "layer": 0}, "bc1_GREEN": {"url": "./background/bc1_GREEN.png", "trait_type": "background", "supply": 0, "layer": 0}, "bc1_ORANGE": {"url": "./background/bc1_ORANGE.png", "trait_type": "background", "supply": 0, "layer": 0}, "bc1_PINK": {"url": "./background/bc1_PINK.png", "trait_type": "background", "supply": 0, "layer": 0}, "bc1_PURPLE": {"url": "./background/bc1_PURPLE.png", "trait_type": "background", "supply": 0, "layer": 0}, "bc1_TIEDYE": {"url": "./background/bc1_TIEDYE.png", "trait_type": "background", "supply": 0, "layer": 0}, "bg1_BAMBOOHABITAT": {"url": "./background/bg1_BAMBOOHABITAT.png", "trait_type": "background", "supply": 0, "layer": 0}, "bg2_ZOOENCLOSURE": {"url": "./background/bg2_ZOOENCLOSURE.png", "trait_type": "background", "supply": 0, "layer": 0}, "bg3_BEACH": {"url": "./background/bg3_BEACH.png", "trait_type": "background", "supply": 0, "layer": 0}, "bg4_DOWNTOWN": {"url": "./background/bg4_DOWNTOWN.png", "trait_type": "background", "supply": 0, "layer": 0}, "bg4_DOWNTOWN_NIGHT": {"url": "./background/bg4_DOWNTOWN_NIGHT.png", "trait_type": "background", "supply": 0, "layer": 0}, "bg5_SUNNYFIELD": {"url": "./background/bg5_SUNNYFIELD.png", "trait_type": "background", "supply": 0, "layer": 0}, "bg5_SUNNYFIELD_NIGHT": {"url": "./background/bg5_SUNNYFIELD_NIGHT.png", "trait_type": "background", "supply": 0, "layer": 0}, "bg6_JUNGEL": {"url": "./background/bg6_JUNGEL.png", "trait_type": "background", "supply": 0, "layer": 0}, "bg7_SPACESHIP": {"url": "./background/bg7_SPACESHIP.png", "trait_type": "background", "supply": 0, "layer": 0}, "bg8_GALAXY": {"url": "./background/bg8_GALAXY.png", "trait_type": "background", "supply": 0, "layer": 0}}
+{
+    "Blue": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Blue.png"
+    },
+    "Diamond": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Diamond.png"
+    },
+    "Field": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Field.png"
+    },
+    "Field Night": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Field Night.png"
+    },
+    "Gold": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Gold.png"
+    },
+    "Green": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Green.png"
+    },
+    "Lilypad": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Lilypad.png"
+    },
+    "Lilypad Gold": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Lilypad Gold.png"
+    },
+    "Orange": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Orange.png"
+    },
+    "Orange Checkered": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Orange Checkered.png"
+    },
+    "Purple": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Purple.png"
+    },
+    "Red": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Red.png"
+    },
+    "Space Green": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Space Green.png"
+    },
+    "Space Purple": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Space Purple.png"
+    },
+    "Space Red": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Space Red.png"
+    },
+    "Underwater": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/Underwater.png"
+    },
+    "White": {
+        "layer": 0,
+        "trait_type": "background",
+        "url": "./background/White.png"
+    }
+}

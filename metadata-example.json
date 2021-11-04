@@ -1,0 +1,31 @@
+{
+    "name": "Frog #0",
+    "symbol": "FROG",
+    "description": "The frogs are having a party!",
+    "image": "https://ipfs.io/ipfs/QmXxoLZYdzw5as8cFeNnrSXiGQoazDZ74vwyyezYynQgM6/0.png/",
+    "seller_fee_basis_points": 200,
+    "external_url": "frog-party.io",
+    "attributes": [
+        {
+            "trait_type": "skin",
+            "value": "Gray"
+        }
+    ],
+    "collection": {
+        "name": "Frog Party"
+    },
+    "properties": {
+        "files": [
+            {
+                "uri": "https://ipfs.io/ipfs/QmXxoLZYdzw5as8cFeNnrSXiGQoazDZ74vwyyezYynQgM6/0.png/",
+                "type": "image/png"
+            }
+        ],
+        "creators": [
+            {
+                "address": "CMetYfSiXPBWB8pXGYyJK3ThFpk2pvNxixJTE4aEXCq3",
+                "share": 100
+            }
+        ]
+    }
+}

@@ -1,1 +1,92 @@
-{"none": {"url": "./misc/none.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body10_JUMPSUIT4": {"url": "./clothes/body10_JUMPSUIT4.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body10_JUMPSUIT5": {"url": "./clothes/body10_JUMPSUIT5.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body10_JUMPSUIT6": {"url": "./clothes/body10_JUMPSUIT6.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body11_SKELETONSUIT": {"url": "./clothes/body11_SKELETONSUIT.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body12_blackgi": {"url": "./clothes/body12_blackgi.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body12_whitegi": {"url": "./clothes/body12_whitegi.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body1_SHIRT1": {"url": "./clothes/body1_SHIRT1.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body1_SHIRT2": {"url": "./clothes/body1_SHIRT2.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body1_SHIRT6": {"url": "./clothes/body1_SHIRT6.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body1_SHIRT7": {"url": "./clothes/body1_SHIRT7.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body2_SUIT1": {"url": "./clothes/body2_SUIT1.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body2_SUIT2": {"url": "./clothes/body2_SUIT2.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body3_SUITBADASS1": {"url": "./clothes/body3_SUITBADASS1.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body3_SUITBADASS2": {"url": "./clothes/body3_SUITBADASS2.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body4_TANKTOP": {"url": "./clothes/body4_TANKTOP.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body5_JERSEY": {"url": "./clothes/body5_JERSEY.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body6_HOODIE1": {"url": "./clothes/body6_HOODIE1.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body6_HOODIE2": {"url": "./clothes/body6_HOODIE2.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body6_HOODIE3": {"url": "./clothes/body6_HOODIE3.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body6_HOODIE4": {"url": "./clothes/body6_HOODIE4.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body7_SWEATER3": {"url": "./clothes/body7_SWEATER3.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body7_SWEATER4": {"url": "./clothes/body7_SWEATER4.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body7_SWEATER5": {"url": "./clothes/body7_SWEATER5.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body7_SWEATER6": {"url": "./clothes/body7_SWEATER6.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body8_SPACESUIT": {"url": "./clothes/body8_SPACESUIT.png", "trait_type": "clothes", "supply": 0, "layer": 3}, "body9_SCUBA": {"url": "./clothes/body9_SCUBA.png", "trait_type": "clothes", "supply": 0, "layer": 3}}
+{
+    "Basketball Jersey": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Basketball Jersey.png"
+    },
+    "Diamond Chain": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Diamond Chain.png"
+    },
+    "Farmer Shirt": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Farmer Shirt.png"
+    },
+    "Golden Chain": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Golden Chain.png"
+    },
+    "Grey Hoodie": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Grey Hoodie.png"
+    },
+    "Hawaiian Shirt": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Hawaiian Shirt.png"
+    },
+    "Hoodie Orange": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Hoodie Orange.png"
+    },
+    "Kimono": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Kimono.png"
+    },
+    "None": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./misc/None.png"
+    },
+    "Orange Jumpsuit": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Orange Jumpsuit.png"
+    },
+    "Star T-Shirt": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Star T-Shirt.png"
+    },
+    "Striped Jumpsuit": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Striped Jumpsuit.png"
+    },
+    "Suit Black": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Suit Black.png"
+    },
+    "Suit White": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Suit White.png"
+    },
+    "Tanktop Black": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Tanktop Black.png"
+    },
+    "Tanktop White": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Tanktop White.png"
+    },
+    "Turtleneck": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Turtleneck.png"
+    },
+    "Turtleneck Green": {
+        "layer": 3,
+        "trait_type": "clothes",
+        "url": "./clothes/Turtleneck Green.png"
+    }
+}

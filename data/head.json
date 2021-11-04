@@ -1,1 +1,92 @@
-{"none": {"url": "./misc/none.png", "trait_type": "head", "supply": 0, "layer": 6}, "Bamboo Hat": {"url": "./head/Bamboo Hat.png", "trait_type": "head", "supply": 0, "layer": 6}, "Banana": {"url": "./head/Banana.png", "trait_type": "head", "supply": 0, "layer": 6}, "Blue Beanie": {"url": "./head/Blue Beanie.png", "trait_type": "head", "supply": 0, "layer": 6}, "Blue Bucket Hat": {"url": "./head/Blue Bucket Hat.png", "trait_type": "head", "supply": 0, "layer": 6}, "Blue Durag": {"url": "./head/Blue Durag.png", "trait_type": "head", "supply": 0, "layer": 6}, "Blue Sunglasses": {"url": "./head/Blue Sunglasses.png", "trait_type": "head", "supply": 0, "layer": 6}, "Blue Visor": {"url": "./head/Blue Visor.png", "trait_type": "head", "supply": 0, "layer": 6}, "Bunny Ears": {"url": "./head/Bunny Ears.png", "trait_type": "head", "supply": 0, "layer": 6}, "Cowboy": {"url": "./head/Cowboy.png", "trait_type": "head", "supply": 0, "layer": 6}, "Crown": {"url": "./head/Crown.png", "trait_type": "head", "supply": 0, "layer": 6}, "Designer Shades": {"url": "./head/Designer Shades.png", "trait_type": "head", "supply": 0, "layer": 6}, "Elegant": {"url": "./head/Elegant.png", "trait_type": "head", "supply": 0, "layer": 6}, "Fast Food": {"url": "./head/Fast Food.png", "trait_type": "head", "supply": 0, "layer": 6}, "Fedora": {"url": "./head/Fedora.png", "trait_type": "head", "supply": 0, "layer": 6}, "Green Beanie": {"url": "./head/Green Beanie.png", "trait_type": "head", "supply": 0, "layer": 6}, "Green Bucket Hat": {"url": "./head/Green Bucket Hat.png", "trait_type": "head", "supply": 0, "layer": 6}, "Green Durag": {"url": "./head/Green Durag.png", "trait_type": "head", "supply": 0, "layer": 6}, "Green Visor": {"url": "./head/Green Visor.png", "trait_type": "head", "supply": 0, "layer": 6}, "Headband": {"url": "./head/Headband.png", "trait_type": "head", "supply": 0, "layer": 6}, "Horns": {"url": "./head/Horns.png", "trait_type": "head", "supply": 0, "layer": 6}, "Mouse Ears": {"url": "./head/Mouse Ears.png", "trait_type": "head", "supply": 0, "layer": 6}, "Orange Sunglasses": {"url": "./head/Orange Sunglasses.png", "trait_type": "head", "supply": 0, "layer": 6}, "Orange Visor": {"url": "./head/Orange Visor.png", "trait_type": "head", "supply": 0, "layer": 6}, "Pilot Goggles": {"url": "./head/Pilot Goggles.png", "trait_type": "head", "supply": 0, "layer": 6}, "Pink Durag": {"url": "./head/Pink Durag.png", "trait_type": "head", "supply": 0, "layer": 6}, "Propellor": {"url": "./head/Propellor.png", "trait_type": "head", "supply": 0, "layer": 6}, "Purple Beanie": {"url": "./head/Purple Beanie.png", "trait_type": "head", "supply": 0, "layer": 6}, "Purple Bucket Hat": {"url": "./head/Purple Bucket Hat.png", "trait_type": "head", "supply": 0, "layer": 6}, "Purple Durag": {"url": "./head/Purple Durag.png", "trait_type": "head", "supply": 0, "layer": 6}, "Purple Sunglasses": {"url": "./head/Purple Sunglasses.png", "trait_type": "head", "supply": 0, "layer": 6}, "Purple Visor": {"url": "./head/Purple Visor.png", "trait_type": "head", "supply": 0, "layer": 6}, "Red Beanie": {"url": "./head/Red Beanie.png", "trait_type": "head", "supply": 0, "layer": 6}, "Red Bucket Hat": {"url": "./head/Red Bucket Hat.png", "trait_type": "head", "supply": 0, "layer": 6}, "Red Designer Shades": {"url": "./head/Red Designer Shades.png", "trait_type": "head", "supply": 0, "layer": 6}, "Red Sunglasses": {"url": "./head/Red Sunglasses.png", "trait_type": "head", "supply": 0, "layer": 6}, "Snorkel": {"url": "./head/Snorkel.png", "trait_type": "head", "supply": 0, "layer": 6}, "Sombrero": {"url": "./head/Sombrero.png", "trait_type": "head", "supply": 0, "layer": 6}, "Space Helmet": {"url": "./head/Space Helmet.png", "trait_type": "head", "supply": 0, "layer": 6}, "Top Hat": {"url": "./head/Top Hat.png", "trait_type": "head", "supply": 0, "layer": 6}, "Trapper": {"url": "./head/Trapper.png", "trait_type": "head", "supply": 0, "layer": 6}, "Yellow Designer Shades": {"url": "./head/Yellow Designer Shades.png", "trait_type": "head", "supply": 0, "layer": 6}, "Yellow Sunglasses": {"url": "./head/Yellow Sunglasses.png", "trait_type": "head", "supply": 0, "layer": 6}}
+{
+    "Albino": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Albino.png"
+    },
+    "Black": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Black.png"
+    },
+    "Brown": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Brown.png"
+    },
+    "Diamond": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Diamond.png"
+    },
+    "Fire Blue": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Fire Blue.png"
+    },
+    "Fire Red": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Fire Red.png"
+    },
+    "Glitch": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Glitch.png"
+    },
+    "Glow": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Glow.png"
+    },
+    "Gold": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Gold.png"
+    },
+    "Gray": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Gray.png"
+    },
+    "Green": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Green.png"
+    },
+    "Lightning": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Lightning.png"
+    },
+    "None": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./misc/None.png"
+    },
+    "Orange": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Orange.png"
+    },
+    "Pink": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Pink.png"
+    },
+    "Rainbow": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Rainbow.png"
+    },
+    "Red": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Red.png"
+    },
+    "Zombie": {
+        "layer": 2,
+        "trait_type": "head",
+        "url": "./head/Zombie.png"
+    }
+}

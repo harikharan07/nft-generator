@@ -1,0 +1,82 @@
+{
+    "Black": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Black.png"
+    },
+    "Blue": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Blue.png"
+    },
+    "Brown": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Brown.png"
+    },
+    "Diamond": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Diamond.png"
+    },
+    "Flame Blue": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Flame Blue.png"
+    },
+    "Flame Red": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Flame Red.png"
+    },
+    "Glitch": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Glitch.png"
+    },
+    "Glow": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Glow.png"
+    },
+    "Gray": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Gray.png"
+    },
+    "Green": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Green.png"
+    },
+    "None": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./misc/None.png"
+    },
+    "Orange": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Orange.png"
+    },
+    "Pink": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Pink.png"
+    },
+    "Rainbow": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Rainbow.png"
+    },
+    "White": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/White.png"
+    },
+    "Zombie": {
+        "layer": 1,
+        "trait_type": "body",
+        "url": "./body/Zombie.png"
+    }
+}

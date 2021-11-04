@@ -1,0 +1,97 @@
+{
+    "Backwood": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Backwood.png"
+    },
+    "Buck Teeth": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Buck Teeth.png"
+    },
+    "Cigarette": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Cigarette.png"
+    },
+    "Diamond Teeth": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Diamond Teeth.png"
+    },
+    "Golden Teeth": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Golden Teeth.png"
+    },
+    "Moustache White": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Moustache White.png"
+    },
+    "Mustache": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Mustache.png"
+    },
+    "Mustacho": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Mustacho.png"
+    },
+    "None": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./misc/None.png"
+    },
+    "Party Horn Blue": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Party Horn Blue.png"
+    },
+    "Party Horn Yellow": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Party Horn Yellow.png"
+    },
+    "Pipe": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Pipe.png"
+    },
+    "Pizza Slice": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Pizza Slice.png"
+    },
+    "Rainbow Teeth": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Rainbow Teeth.png"
+    },
+    "Tongue Pink": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Tongue Pink.png"
+    },
+    "Tongue Red": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Tongue Red.png"
+    },
+    "Vape": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Vape.png"
+    },
+    "Watery Mouth": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Watery Mouth.png"
+    },
+    "Zipper": {
+        "layer": 4,
+        "trait_type": "mouth",
+        "url": "./mouth/Zipper.png"
+    }
+}
